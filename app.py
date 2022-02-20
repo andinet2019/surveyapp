@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import os
 from sendemail import send_mail
 app = Flask(__name__)
 ENV = 'prod'
@@ -8,7 +9,8 @@ if ENV == 'dev':
     app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:Kang115!@localhost/mnrealtors'
 else:
     app.debug = True
-    app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://gwmvqasnxeznpv:b2f82e1e9cea6846dd53a41b69928468e0b786eb8f2eab21c067dbf9b6f42d48@ec2-52-73-149-159.compute-1.amazonaws.com:5432/desquesggkdb10"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://gwmvqasnxeznpv:b2f82e1e9cea6846dd53a41b69928468e0b786eb8f2eab21c067dbf9b6f42d48@ec2-52-73-149-159.compute-1.amazonaws.com:5432/desquesggkdb10"
+
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
