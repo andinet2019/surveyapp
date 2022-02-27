@@ -18,7 +18,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-class Survey(db.Model):
+class Survey(db.Model): 
     __tablename__ = "survey"
     id = db.Column(db.Integer, primary_key=True)
     customer = db.Column(db.String(200), unique=True)
