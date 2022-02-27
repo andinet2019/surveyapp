@@ -1,15 +1,17 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+from dotenv import load_dotenv
 from sendemail import send_mail
 app = Flask(__name__)
 ENV = 'prod'
+load_dotenv()
 if ENV == 'dev':
     app.debug = True
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:Kang115!@localhost/mnrealtors'
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv('DB_DEV_URL')
 else:
     app.debug = True
-    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://gwmvqasnxeznpv:b2f82e1e9cea6846dd53a41b69928468e0b786eb8f2eab21c067dbf9b6f42d48@ec2-52-73-149-159.compute-1.amazonaws.com:5432/desquesggkdb10"
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv('DB_PROD_URL')
 
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
