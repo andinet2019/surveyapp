@@ -5,11 +5,10 @@ name = "pypi"
 
 [packages]
 flask = "*"
-psycopg2-binary = "*"
-flask-sqlalchemy = "*"
+
 gunicorn = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+

@@ -5,52 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/style.css" />
-    <title>Please rate your Realtor</title>
+    <title>RatingApp</title>
   </head>
   <body>
+  <div class="main_container">
     <div class="container">
-      <img src="../static/logo.png" alt="real estate" class="logo" />
+      <img src="../static/logo.png" alt="rating app" class="logo" />
       {% if message %}
       <h3 class="message">{{ message | safe }}</h3>
       {% endif %}
-      <form action="/submit" method="POST">
+      <form action="/submit" method="POST" class="form_bg">
         <div class="form-group">
-          <h3>Customer Name</h3>
+          <h2>Student Name</h2>
           <input
             type="text"
-            name="customer"
-            placeholder="Name of the property owner"
+            name="student"
+            placeholder="Name of the student"
           />
         </div>
         <div class="form-group">
-          <h3>Realtor</h3>
-          <select name="realtor">
-            <option value="">Select Realtor</option>
+          <h2>Instructor Name</h2>
+          <select name="instructor">
+            <option value="">Select Instructor</option>
             <option value="Alex Lee">Alex Lee</option>
             <option value="Sam Brown">Sam Brown</option>
             <option value="Mailee J">Mailee J.</option>
-            <option value="Tracy Vang">Tracy Vang</option>
+            <option value="Tracy K">Tracy K.</option>
+            <option value="ames A">James A.</option>
+            <option value="Xue">Xue </option>
           </select>
         </div>
         <div class="form-group">
-          <h3>Property Address</h3>
+          <h2>Cohort Name</h2>
           <input
             type="text"
-            name="address"
-            placeholder="Your property address here"
+            name="cohort_name"
+            placeholder="Your cohort name here"
           />
         </div>
 
+
         <div class="form-group">
-          <h3>Please rate your Realtor</h3>
-          <input type="radio" name="rating" value="1" /> 1
-          <input type="radio" name="rating" value="2" /> 2
-          <input type="radio" name="rating" value="3" /> 3
-          <input type="radio" name="rating" value="4" /> 4
-          <input type="radio" name="rating" value="10" checked />5
-        </div>
-        <div class="form-group">
-          <h3>Comments about our services</h3>
+          <h2>What is your overall feedback about your Bootcamp experience </h2>
           <textarea
             name="comments"
             id=""
@@ -59,8 +55,17 @@
             placeholder="Tell us about your experience!"
           ></textarea>
         </div>
+                <div class="form-group">
+          <h2>Please rate your Instructor</h2>
+          1<input type="radio" name="rating" value="1" />
+          2<input type="radio" name="rating" value="2" />
+          3<input type="radio" name="rating" value="3" />
+          4<input type="radio" name="rating" value="4" />
+          5<input type="radio" name="rating" value="5" checked />
+        </div>
         <input type="submit" value="Submit" class="btn" />
       </form>
+    </div>
     </div>
   </body>
 </html>
