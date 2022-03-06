@@ -9,8 +9,8 @@ load_dotenv()
 def send_mail(student, instructor, cohort_name, rating, comments):
     port = 2525
     smtp_server = "smtp.mailtrap.io"
-    login = "f8e6dbfbbdaf2c"
-    password = "5ac1ef9da9af86"
+    login = os.getenv('login')
+    password = os.getenv('password')
     message = f"<h3>New Feedback Submission Received</h3><ul><li>Student Name: {student}</li><li>Instructor Name: {instructor}" \
               f"</li><li>Cohort Name: {cohort_name}</li><li>Rating: {rating}</li><li>Comments: {comments}</li></ul>"
 
