@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sendemail import send_mail
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 
 # for using secrets in .env
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ if ENV == 'dev':
 
 else:
     app.debug = True
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DB_PROD_URL")
+    app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://ppdpdxlwrboyrk:8520b5f7656c454dcfeb96a252e55df361482f178a9ace0b5fd99bfafc727d4f@ec2-3-221-109-227.compute-1.amazonaws.com:5432/dfvp51l9598iu7"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
