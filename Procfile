@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn ratingapp-v4:app
